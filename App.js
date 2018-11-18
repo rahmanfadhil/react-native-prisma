@@ -1,12 +1,10 @@
-// @flow
-
 import React, { Component } from "react";
 import { Font, AppLoading } from "expo";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import RegisterScreen from "./src/screens/RegisterScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 
-export default class App extends Component<{}, { loading: boolean }> {
+export default class App extends Component {
   state = { loading: true };
 
   async componentWillMount() {

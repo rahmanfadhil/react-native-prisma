@@ -13,6 +13,10 @@ import {
 } from "native-base";
 
 class RegisterScreen extends Component {
+  static navigationOptions = {
+    title: "Register"
+  };
+
   render() {
     return (
       <Container
@@ -44,7 +48,12 @@ class RegisterScreen extends Component {
             </Button>
             <Text style={{ marginTop: 10 }}>
               Already have an account?{" "}
-              <Text style={{ color: "#3F51B5" }}>Login</Text>
+              <Text
+                onPress={() => this.props.navigation.navigate("Login")}
+                style={{ color: "#3F51B5" }}
+              >
+                Login
+              </Text>
             </Text>
           </View>
         </Content>

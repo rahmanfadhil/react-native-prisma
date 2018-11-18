@@ -13,6 +13,10 @@ import {
 } from "native-base";
 
 class LoginScreen extends Component {
+  static navigationOptions = {
+    title: "Login"
+  };
+
   render() {
     return (
       <Container
@@ -38,10 +42,6 @@ class LoginScreen extends Component {
               <Text>Login</Text>
               <Icon name="arrow-forward" />
             </Button>
-            <Text style={{ marginTop: 10 }}>
-              Don't have account yet?{" "}
-              <Text style={{ color: "#3F51B5" }}>Login</Text>
-            </Text>
           </View>
         </Content>
       </Container>
