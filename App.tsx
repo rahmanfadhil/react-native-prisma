@@ -1,21 +1,66 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { Component } from "react";
+import { Font, AppLoading, Constants } from "expo";
+import {
+  Container,
+  Content,
+  Button,
+  Text,
+  Icon,
+  Input,
+  Form,
+  Item,
+  View
+} from "native-base";
 
-export default class App extends React.Component {
+export default class App extends Component<{}, { loading: boolean }> {
+  state = { loading: true };
+
+  async componentWillMount() {
+    await Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+    });
+    this.setState({ loading: false });
+  }
+
   render() {
+    if (this.state.loading) return <AppLoading />;
+
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Container
+        style={{
+          marginTop: Constants.statusBarHeight
+        }}
+      >
+        <Content
+          contentContainerStyle={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <View style={{ width: 300 }}>
+            <Form style={{ marginBottom: 20 }}>
+              <Item last>
+                <Icon name="person" />
+                <Input placeholder="Name" />
+              </Item>
+              <Item last>
+                <Icon name="mail" />
+                <Input placeholder="Email" />
+              </Item>
+            </Form>
+            <Button full>
+              <Text>Register</Text>
+              <Icon name="arrow-forward" />
+            </Button>
+            <Text style={{ marginTop: 10 }}>
+              Already have an account?{" "}
+              <Text style={{ color: "#3F51B5" }}>Login</Text>
+            </Text>
+          </View>
+        </Content>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
