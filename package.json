@@ -12,12 +12,11 @@
     "expo": "^31.0.2",
     "native-base": "^2.8.1",
     "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-navigation": "^3.0.0"
   },
   "devDependencies": {
-    "@types/expo": "^30.0.0",
-    "@types/react": "^16.7.6",
-    "@types/react-native": "^0.57.10",
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "flow-bin": "^0.86.0"
   }
 }
